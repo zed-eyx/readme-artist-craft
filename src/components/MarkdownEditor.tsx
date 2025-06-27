@@ -29,10 +29,10 @@ export const MarkdownEditor = ({ value, onChange, className }: MarkdownEditorPro
   return (
     <div className={cn("relative flex bg-gray-50", className)}>
       {/* Line Numbers */}
-      <div className="flex-shrink-0 bg-gray-100 border-r border-gray-200 p-4 text-right min-w-[60px]">
+      <div className="flex-shrink-0 bg-gray-100 border-r border-gray-200 p-4 text-right min-w-[60px] max-w-[60px] overflow-hidden">
         <div className="font-mono text-sm text-gray-500 leading-6">
           {lineNumbers.map((num) => (
-            <div key={num} className="h-6">
+            <div key={num} className="h-6 truncate">
               {num}
             </div>
           ))}

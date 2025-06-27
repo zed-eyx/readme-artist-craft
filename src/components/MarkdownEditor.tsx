@@ -16,13 +16,15 @@ export const MarkdownEditor = ({ value, onChange, className }: MarkdownEditorPro
     const newValue = e.target.value;
     onChange(newValue);
     
-    // Update line count
+    // Update line count based on actual content
     const lines = newValue.split('\n').length;
     setLineCount(lines);
   };
 
-  // Generate line numbers
-  const lineNumbers = Array.from({ length: Math.max(lineCount, 20) }, (_, i) => i + 1);
+  // Generate line numbers only for actual content, with a minimum of visible lines
+  const actualLines = value.split('\n').length;
+  const visibleLines = Math.max(actualLines, 10); // Show at least 10 lines for better UX
+  const lineNumbers = Array.from({ length: visibleLines }, (_, i) => i + 1);
 
   return (
     <div className={cn("relative flex bg-gray-50", className)}>

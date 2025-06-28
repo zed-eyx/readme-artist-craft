@@ -50,7 +50,7 @@ export const MarkdownEditor = ({ value, onChange, className }: MarkdownEditorPro
             onChange={handleChange}
             placeholder="Start writing your README markdown here..."
             className={cn(
-              "w-full resize-none border-0 bg-transparent p-6 text-sm leading-relaxed",
+              "w-full resize-none border-0 bg-transparent p-3 sm:p-4 lg:p-6 text-xs sm:text-sm leading-relaxed",
               "focus:ring-0 focus:outline-none",
               "placeholder:text-gray-400 text-gray-700",
               "font-normal tracking-wide"

@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Header } from "@/components/Header";
+import { AnimatedTitle } from "@/components/AnimatedTitle";
 import { ActionBar } from "@/components/ActionBar";
 import { EditorPreviewTabs } from "@/components/EditorPreviewTabs";
 import { FeaturesSection } from "@/components/FeaturesSection";
@@ -118,7 +119,9 @@ Inspiration, code snippets, etc.
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <Header />
       
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-8">
+        <AnimatedTitle />
+        
         <ActionBar 
           onCopyMarkdown={handleCopyMarkdown}
           onDownloadMarkdown={handleDownloadMarkdown}

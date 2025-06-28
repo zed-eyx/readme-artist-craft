@@ -15,8 +15,8 @@ export const AnimatedTitle = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const titleWords = ["README", "Generator"];
-  const subtitleWords = ["Create", "beautiful", "documentation", "effortlessly"];
+  const titleWords = ["Create", "your", "readme"];
+  const subtitleWords = ["Build", "beautiful", "documentation", "effortlessly"];
 
   return (
     <div className="text-center mb-8 sm:mb-12">

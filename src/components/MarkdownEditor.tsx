@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
@@ -11,7 +12,6 @@ interface MarkdownEditorProps {
 }
 
 export const MarkdownEditor = ({ value, onChange, className }: MarkdownEditorProps) => {
-  const [lineCount, setLineCount] = useState(1);
   const editorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,58 +27,33 @@ export const MarkdownEditor = ({ value, onChange, className }: MarkdownEditorPro
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = e.target.value;
     onChange(newValue);
-    
-    // Update line count based on actual content
-    const lines = newValue.split('\n').length;
-    setLineCount(lines);
   };
-
-  // Generate line numbers only for actual content, with a minimum of visible lines
-  const actualLines = value.split('\n').length;
-  const visibleLines = Math.max(actualLines, 10); // Show at least 10 lines for better UX
-  const lineNumbers = Array.from({ length: visibleLines }, (_, i) => i + 1);
 
   return (
     <motion.div 
       ref={editorRef}
-      className={cn("relative flex bg-gray-50", className)}
+      className={cn("relative bg-white", className)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Line Numbers */}
       <motion.div 
-        className="flex-shrink-0 bg-gray-100 border-r border-gray-200 p-4 text-right min-w-[60px] max-w-[60px] overflow-hidden"
-        initial={{ opacity: 0, x: -10 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <div className="font-mono text-sm text-gray-500 leading-6">
-          {lineNumbers.map((num) => (
-            <div key={num} className="h-6 truncate">
-              {num}
-            </div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Editor */}
-      <motion.div 
-        className="flex-1 relative"
+        className="w-full h-full"
         initial={{ opacity: 0, x: 10 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
       >
         <Textarea
           value={value}
           onChange={handleChange}
           placeholder="Start writing your README markdown here..."
           className={cn(
-            "w-full h-full resize-none border-0 bg-transparent p-4 font-mono text-sm leading-6",
+            "w-full h-full resize-none border-0 bg-transparent p-6 text-sm leading-relaxed",
             "focus:ring-0 focus:outline-none",
-            "placeholder:text-gray-400"
+            "placeholder:text-gray-400 text-gray-700",
+            "font-normal tracking-wide"
           )}
-          style={{ minHeight: '100%' }}
+          style={{ minHeight: '100%', fontFamily: 'system-ui, -apple-system, sans-serif' }}
         />
       </motion.div>
     </motion.div>

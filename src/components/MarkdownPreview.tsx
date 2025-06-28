@@ -1,5 +1,6 @@
 
 import { cn } from "@/lib/utils";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 
 interface MarkdownPreviewProps {
@@ -48,22 +49,24 @@ export const MarkdownPreview = ({ content, className }: MarkdownPreviewProps) =>
 
   return (
     <motion.div 
-      className={cn("bg-white p-6", className)}
+      className={cn("bg-white h-full", className)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
     >
-      <div className="prose prose-sm max-w-none">
-        <motion.div
-          className="markdown-content"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          dangerouslySetInnerHTML={{
-            __html: convertMarkdownToHTML(content)
-          }}
-        />
-      </div>
+      <ScrollArea className="h-full w-full">
+        <div className="prose prose-sm max-w-none p-6">
+          <motion.div
+            className="markdown-content"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            dangerouslySetInnerHTML={{
+              __html: convertMarkdownToHTML(content)
+            }}
+          />
+        </div>
+      </ScrollArea>
     </motion.div>
   );
 };

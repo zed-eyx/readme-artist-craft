@@ -4,20 +4,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>readme-artist-craft</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>YourReadme - Professional README Generator & Editor</title>
+    <meta name="description" content="Create beautiful, professional README files for your GitHub projects with our free online editor. Live preview, templates, and instant download." />
+    <meta name="keywords" content="README generator, GitHub README, markdown editor, documentation tool, project documentation, open source" />
+    <meta name="author" content="YourReadme" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://yourreadme.com" />
 
-    <meta property="og:title" content="readme-artist-craft" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourreadme.com" />
+    <meta property="og:title" content="YourReadme - Professional README Generator & Editor" />
+    <meta property="og:description" content="Create beautiful, professional README files for your GitHub projects with our free online editor. Live preview, templates, and instant download." />
+    <meta property="og:site_name" content="YourReadme" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:url" content="https://yourreadme.com" />
+    <meta name="twitter:title" content="YourReadme - Professional README Generator & Editor" />
+    <meta name="twitter:description" content="Create beautiful, professional README files for your GitHub projects with our free online editor. Live preview, templates, and instant download." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>" />
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- CSS optimization -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Loading state */
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 18px;
+        color: #666;
+      }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "YourReadme",
+      "description": "Professional README generator and editor for GitHub projects",
+      "url": "https://yourreadme.com",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "YourReadme"
+      }
+    }
+    </script>
   </head>
 
   <body>
-    <div id="root"></div>
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>YourReadme requires JavaScript to function properly. Please enable JavaScript in your browser.</p>
+      </div>
+    </noscript>
+    
+    <div id="root">
+      <div class="loading">Loading YourReadme...</div>
+    </div>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

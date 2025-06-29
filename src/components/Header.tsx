@@ -34,9 +34,9 @@ export const Header = () => {
             </div>
             <div>
               <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-                README Generator
+                YourReadme
               </h1>
-              <p className="text-gray-600 mt-1">Create beautiful README files with live preview</p>
+              <p className="text-gray-600 mt-1">Professional README generator with live preview</p>
             </div>
           </div>
           <div className="flex items-center space-x-3">

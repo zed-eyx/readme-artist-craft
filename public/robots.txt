@@ -1,14 +1,30 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://your-site.netlify.app/sitemap.xml
+
+# Major search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# Social media crawlers
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
+
+# Disallow common admin/system paths (if they exist)
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /api/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

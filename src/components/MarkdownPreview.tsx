@@ -49,13 +49,13 @@ export const MarkdownPreview = ({ content, className }: MarkdownPreviewProps) =>
 
   return (
     <motion.div 
-      className={cn("bg-white h-full", className)}
+      className={cn("bg-white h-full flex flex-col", className)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
     >
-      <ScrollArea className="h-full w-full">
-        <div className="prose prose-sm max-w-none p-3 sm:p-4 lg:p-6 min-h-full">
+      <ScrollArea className="flex-1 w-full h-full">
+        <div className="prose prose-sm max-w-none p-3 sm:p-4 lg:p-6">
           <motion.div
             className="markdown-content"
             initial={{ opacity: 0, y: 10 }}

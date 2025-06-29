@@ -49,12 +49,12 @@ export const EditorPreviewTabs = ({
             </div>
 
             {/* Content Area */}
-            <div className="relative min-h-[600px]">
+            <div className="relative min-h-[600px] max-h-[600px]">
               {/* Desktop Layout - Side by Side */}
               <div className="hidden lg:grid lg:grid-cols-2 h-[600px]">
                 {/* Editor Side */}
                 <motion.div 
-                  className="border-r border-gray-200"
+                  className="border-r border-gray-200 h-full overflow-hidden"
                   initial={{ opacity: 1 }}
                   animate={{ 
                     opacity: activeTab === "preview" ? 0.3 : 1,
@@ -71,6 +71,7 @@ export const EditorPreviewTabs = ({
 
                 {/* Preview Side */}
                 <motion.div
+                  className="h-full overflow-hidden"
                   initial={{ opacity: 1 }}
                   animate={{ 
                     opacity: activeTab === "editor" ? 0.3 : 1,
@@ -80,7 +81,7 @@ export const EditorPreviewTabs = ({
                 >
                   <MarkdownPreview
                     content={markdown}
-                    className="h-full overflow-auto"
+                    className="h-full"
                   />
                 </motion.div>
               </div>
@@ -119,7 +120,7 @@ export const EditorPreviewTabs = ({
                       <TabsContent value="preview" className="h-full mt-0">
                         <MarkdownPreview
                           content={markdown}
-                          className="h-full overflow-auto"
+                          className="h-full"
                         />
                       </TabsContent>
                     </motion.div>

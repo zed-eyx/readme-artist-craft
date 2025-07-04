@@ -1,8 +1,8 @@
-# Readme Generator Project 
+we# Readme Generator Project 
 
 ## Project info
 
-**URL**: https://yourreadme.netlify.app
+**URL**: https://yourreadme.netlify.app/#
 
 ## How can I edit this code?
 

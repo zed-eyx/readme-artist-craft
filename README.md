@@ -1,4 +1,4 @@
-we# Readme Generator Project 
+# Readme Generator Project 
 
 ## Project info
 

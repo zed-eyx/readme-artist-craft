@@ -8,8 +8,6 @@
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
 Simply visit the [Lovable Project](https://lovable.dev/projects/6aad6508-0ed2-4f55-985a-173ce46052fa) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
